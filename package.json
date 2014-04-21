@@ -1,5 +1,5 @@
 {
-  "name": "WapEditor",
+  "name": "GooMenu",
   "version": "1.0.0",
   "description": "Menú de navegación inspirado en el de Google.",
   "main": "index.js",
@@ -7,14 +7,12 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Carlos Guzman (ggrac)",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "gulp": "^3.6.0",
     "gulp-watch": "^0.5.4",
     "gulp-stylus": "^0.2.1",
     "gulp-jade": "^0.5.0",
-    "gulp-plumber": "^0.6.1",
-    "gulp-util": "^2.2.14",
     "connect": "^2.14.4"
   }
 }
