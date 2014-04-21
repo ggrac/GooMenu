@@ -1,0 +1,124 @@
+doctype html
+html(lang=es)
+	head
+		title GooMenu
+		link(rel="stylesheet", type="text/css", href="css/font-awesome.css")
+		link(rel="stylesheet", type="text/css", href="css/style.css")
+	body
+		.pop-pointer
+		header.clearfix
+			ul.menu
+				li 
+					a(href='#') +User
+				li
+					a(href='#') Gmail
+				li
+					a(href='#') Imágenes
+				li
+					a(href='#' data-pop='icons').fa.fa-th
+				li
+					a(href='#' data-pop='notif').fa.fa-bell-o
+				li
+					a(href='#' data-pop='share').fa.fa-plus.plus
+				li
+					a(href='#' data-pop='profile')
+						img(src='img/profile.jpg')
+			#profile.pop
+				figure
+					img(src="img/profile.jpg" title="@ggrac")
+				div.data
+					.name Carlos Guzmán
+					.email ggrac79@gmail.com
+				.pop-footer
+					button.btn Agregar cuenta
+					button.btn Salir
+			#icons.pop
+				.icon
+					span.fa.fa-bitbucket-square
+					a(href='https://bitbucket.org/') bitbucket
+				.icon
+					span.fa.fa-github-square
+					a(href='http://github.com/') github
+				.icon
+					span.fa.fa-html5
+					a(href='http://www.w3.org/html/logo/') html5
+				.icon
+					span.fa.fa-trello
+					a(href='http://trello.com') trello
+				.icon
+					span.fa.fa-facebook
+					a(href='http://facebook.com') facebook
+				.icon
+					span.fa.fa-google-plus
+					a(href='http://plus.google.com/') Google+
+				.icon
+					span.fa.fa-pinterest
+					a(href='http://pinterest.com/') Pinterest
+				.icon
+					span.fa.fa-flickr
+					a(href='http://flickr.com/') Flickr
+				.icon
+					span.fa.fa-linux
+					a(href='http://www.linux.org/') Linux
+				hr
+				.icon
+					span.fa.fa-dropbox
+					a(href='http://dropboxx.com/') Dropbox
+				.icon
+					span.fa.fa-foursquare
+					a(href='http://foursquare.com/') Foursquare
+				.icon
+					span.fa.fa-youtube
+					a(href='http://youtube.com/') Youtube
+			#notif.pop
+				div
+					a(href='#') Notificaciones
+				div.fa.fa-ticket
+			#share.pop
+				div
+					textarea(placeholder='Comparte tus novedades')
+				div
+					span.fa.fa-camera
+					span.txt fotos
+					span.fa.fa-link
+					span.txt Vínculo
+					span.fa.fa-youtube-play
+					span.txt Videos
+					span.fa.fa-calendar
+					span.txt Evento
+				div
+					span.btn.btnshare Compartir
+					span.btn.btncancel Cancelar
+
+		section.content
+				| GooMenu
+
+		footer
+			span @ggrac 2014
+
+		script(src="http://code.jquery.com/jquery-1.11.0.min.js")
+		script.
+			$( function() {
+
+				$('.menu li a[data-pop]').on('click', function(e){
+					e.stopPropagation();
+					$('.pop').hide();
+
+					var pop = $(this).attr('data-pop');
+					$('#' + pop).show();
+
+					console.log( $('.pop-pointer').height() );
+
+					$('.pop-pointer').show()
+									.css('top', ($('#' + pop).offset().top - 7) + 'px')
+									.css('left', ($(this).offset().left + $(this).width()/2) + 'px')
+									.css('border-bottom-color', $('#' + pop).css('background-color'))
+				});
+				$('.pop').on('click', function (e) {
+					e.stopPropagation();
+				});
+				$(document).on('click', function(){
+					$('.pop').hide();
+					$('.pop-pointer').hide()
+				});
+			});

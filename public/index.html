@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GooMenu</title>
+    <link rel="stylesheet" type="text/css" href="css/font-awesome.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+  </head>
+  <body>
+    <div class="pop-pointer"></div>
+    <header class="clearfix">
+      <ul class="menu">
+        <li><a href="#">+User</a></li>
+        <li><a href="#">Gmail</a></li>
+        <li><a href="#">Imágenes</a></li>
+        <li><a href="#" data-pop="icons" class="fa fa-th"></a></li>
+        <li><a href="#" data-pop="notif" class="fa fa-bell-o"></a></li>
+        <li><a href="#" data-pop="share" class="fa fa-plus plus"></a></li>
+        <li><a href="#" data-pop="profile"><img src="img/profile.jpg"></a></li>
+      </ul>
+      <div id="profile" class="pop">
+        <figure><img src="img/profile.jpg" title="@ggrac"></figure>
+        <div class="data">
+          <div class="name">Carlos Guzmán</div>
+          <div class="email">ggrac79@gmail.com</div>
+        </div>
+        <div class="pop-footer">
+          <button class="btn">Agregar cuenta</button>
+          <button class="btn">Salir</button>
+        </div>
+      </div>
+      <div id="icons" class="pop">
+        <div class="icon"><span class="fa fa-bitbucket-square"></span><a href="https://bitbucket.org/">bitbucket</a></div>
+        <div class="icon"><span class="fa fa-github-square"></span><a href="http://github.com/">github</a></div>
+        <div class="icon"><span class="fa fa-html5"></span><a href="http://www.w3.org/html/logo/">html5</a></div>
+        <div class="icon"><span class="fa fa-trello"></span><a href="http://trello.com">trello</a></div>
+        <div class="icon"><span class="fa fa-facebook"></span><a href="http://facebook.com">facebook</a></div>
+        <div class="icon"><span class="fa fa-google-plus"></span><a href="http://plus.google.com/">Google+</a></div>
+        <div class="icon"><span class="fa fa-pinterest"></span><a href="http://pinterest.com/">Pinterest</a></div>
+        <div class="icon"><span class="fa fa-flickr"></span><a href="http://flickr.com/">Flickr</a></div>
+        <div class="icon"><span class="fa fa-linux"></span><a href="http://www.linux.org/">Linux</a></div>
+        <hr>
+        <div class="icon"><span class="fa fa-dropbox"></span><a href="http://dropboxx.com/">Dropbox</a></div>
+        <div class="icon"><span class="fa fa-foursquare"></span><a href="http://foursquare.com/">Foursquare</a></div>
+        <div class="icon"><span class="fa fa-youtube"></span><a href="http://youtube.com/">Youtube</a></div>
+      </div>
+      <div id="notif" class="pop">
+        <div><a href="#">Notificaciones</a></div>
+        <div class="fa fa-ticket"></div>
+      </div>
+      <div id="share" class="pop">
+        <div>
+          <textarea placeholder="Comparte tus novedades"></textarea>
+        </div>
+        <div><span class="fa fa-camera"></span><span class="txt">fotos</span><span class="fa fa-link"></span><span class="txt">Vínculo</span><span class="fa fa-youtube-play"></span><span class="txt">Videos</span><span class="fa fa-calendar"></span><span class="txt">Evento</span></div>
+        <div><span class="btn btnshare">Compartir</span><span class="btn btncancel">Cancelar</span></div>
+      </div>
+    </header>
+    <section class="content">GooMenu</section>
+    <footer><span>@ggrac 2014</span></footer>
+    <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script>
+      $( function() {
+      
+       $('.menu li a[data-pop]').on('click', function(e){
+        e.stopPropagation();
+        $('.pop').hide();
+        
+        var pop = $(this).attr('data-pop');
+        $('#' + pop).show();
+        
+        console.log( $('.pop-pointer').height() );
+        
+        $('.pop-pointer').show()
+            .css('top', ($('#' + pop).offset().top - 7) + 'px')
+            .css('left', ($(this).offset().left + $(this).width()/2) + 'px')
+            .css('border-bottom-color', $('#' + pop).css('background-color'))
+       });
+       $('.pop').on('click', function (e) {
+        e.stopPropagation();
+       });
+       $(document).on('click', function(){
+        $('.pop').hide();
+        $('.pop-pointer').hide()
+       });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,227 @@
+gris = #404040
+gris_header = #f1f1f1
+gris_trans = rgba(0,0,0,0.04)
+gris_boton = #eaeaea
+gris_notif = #e5e5e5
+gris_share = #f5f5f5
+negro = #000
+blanco = #fff
+fuente = arial, sans-serif
+
+body
+	background-image url(../img/bg.png)
+	color gris
+	font-family fuente
+	font-size 16px
+	height 100%
+	margin 0
+	padding 0
+
+.clearfix:after
+	clear both
+	content "."
+	display block
+	height 0
+	line-height 0
+	visibility hidden
+
+header
+	background-color gris_header
+	font-size 13px
+	position relative
+	.menu
+		float right
+		margin 10px 20px
+		li
+			display inline-block
+			margin 0 5px
+			a
+				color gris
+				position relative
+				text-decoration none
+				&:hover
+					color negro
+					text-decoration underline
+				&.fa
+					font-size 1.3em
+					margin-bottom -5px
+					padding 10px
+					&:hover
+						text-decoration: none
+				&.plus
+					background gris_boton
+					display inline
+					height 10px
+					position relative
+					&:hover
+						background gris_trans
+						&:after
+							border-left 4px solid gris_trans
+					&:after
+						border-left 4px solid gris_boton
+						border-top 4px solid transparent
+						bottom 0
+						content ""
+						height 0
+						position absolute
+						right -4px
+						width 0
+			img
+				border-radius 50%
+				display inline
+				height 32px
+				vertical-align middle
+				width 32px
+
+.pop
+	box-sizing border-box
+	background blanco
+	border: 1px solid #ccc;
+	box-shadow: 0 2px 10px rgba(0,0,0,.2);
+	margin-top 55px
+	margin-right 20px
+	min-width 320px
+	padding 10px
+	position absolute
+	right 0
+	display none
+	
+.pop-pointer
+		position absolute
+		left 0
+		top 0
+		border-top 0
+		border-left 8px solid transparent
+		border-right 8px solid transparent
+		border-bottom 8px solid blanco
+		border-style none dashed solid dashed
+		width 0
+		height 0
+		z-index 1000
+		display none
+#profile
+	background blanco
+	padding 0
+	font-size 16px
+	overflow hidden
+	figure
+		margin 15px
+		padding 0
+		display inline-block
+		img
+			width 96px
+			height 96px
+	.data
+		margin 20px 15px 0 0
+		font-size 14px
+		display inline-block
+		vertical-align top
+		.name
+			font-weight bold
+		.email
+			font-style italic
+	.btn
+		background blanco
+		padding 10px
+		display inline-block
+		border 1px solid #ccc
+		border-radius 2px
+		font-weight bold
+		color gris
+
+	.pop-footer
+		padding 10px
+		border-top 1px solid gris_notif
+		background gris_trans
+#notif
+	background gris_notif
+	border-color gris_notif
+	text-align center
+	a
+		color gris
+		text-decoration none
+		&:hover
+			text-decoration underline
+	.fa
+		margin-top 50px
+		font-size 100px
+		color gris_trans
+
+#share
+	background gris_share
+	text-align center
+	padding 20px
+	font-size 16px
+	width 400px
+	textarea
+		box-sizing border-box
+		font-family fuente
+		font-size 14px
+		padding 10px
+		border 1px solid #e4e4e4
+		width 100%
+		height 80px
+	.txt
+		margin-right 10px
+		margin-left 6px
+	.fa:before
+		font-size 16px
+	.fa-camera:before
+		color #4689F6
+	.fa-link:before
+		color #F7B72B
+	.fa-youtube-play:before
+		color #D73D32
+	.fa-calendar
+		color #52A63F
+	.btn
+		margin 20px
+		padding 10px
+		display inline-block
+		border 1px solid #ccc
+		border-radius 2px
+		font-weight bold
+		color blanco
+	.btnshare
+		background #52A63F
+	.btncancel
+		background blanco
+		color negro
+	a
+		color gris
+		text-decoration none
+		&:hover
+			text-decoration underline
+
+#icons
+	box-sizing border-box
+	text-align left
+	width 360px
+	height 320px
+	overflow auto
+	.icon
+		box-sizing border-box
+		padding 10px
+		margin 5px
+		width 100px
+		height 100px
+		display inline-block
+		text-align center
+		.fa
+			font-size 64px
+			display block
+	hr
+		width 95%
+		border 1px solid gris_header
+		margin 30px 0
+	.span
+		font-size 1em
+
+.content
+	font-size 5em
+	margin 0.5em auto
+	text-align center
+
+footer
+	line-height 60px
+	text-align center
